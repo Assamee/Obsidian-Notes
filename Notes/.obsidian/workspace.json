@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
+                "file": "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Double Summation"
+              "title": "Converging or Diverging Series Tests"
             }
           },
           {
@@ -103,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "68fefabb771d0bee",
@@ -119,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
+                "file": "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Double Summation"
+              "title": "Backlinks for Converging or Diverging Series Tests"
             }
           },
           {
@@ -138,12 +139,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
+                "file": "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Double Summation"
+              "title": "Outgoing links from Converging or Diverging Series Tests"
             }
           },
           {
@@ -181,20 +182,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
+                "file": "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Double Summation"
+              "title": "Outline of Converging or Diverging Series Tests"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -210,12 +211,12 @@
   },
   "active": "07d0b0dc174b6fec",
   "lastOpenFiles": [
+    "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
     "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
     "Course Notes/SMA/Topic 3 - Analysing Limits/Methods to Find Limits.md",
     "Untitled.base",
     "2026-02-04.md",
     "Untitled.canvas",
-    "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
     "Welcome.md",
     "create a link.md",
     "Course Notes/SMA/Topic 6 - Series/Untitled",
