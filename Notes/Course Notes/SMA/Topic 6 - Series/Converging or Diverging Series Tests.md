@@ -88,6 +88,6 @@ $$I = \lim_{N \rightarrow \infty}{\int_1^N{f(x)}}dx$$
 1.  $\textbf{Limit: } \lim_{k \rightarrow \infty}{|a_k|} = 0$
 2. $\textbf{Decreasing: } |\lim_{k \rightarrow \infty}{|a_k|}| \lt |a_k| \text{, the terms eventually get smaller (in magnitude)}$
 #### $\text{Rules:}$ 
-- $\text{If \textbf{both} conditions are met} \rightarrow \text{The series \textbf{Converges}}$
+$\text{If \textbf{both} conditions are met} \rightarrow \text{The series \textbf{Converges}}$
 
 $\textbf{Note: } \text{Does not check for absolute convergence}$
