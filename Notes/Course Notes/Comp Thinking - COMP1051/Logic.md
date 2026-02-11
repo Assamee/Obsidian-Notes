@@ -45,7 +45,7 @@ $$p \Rightarrow q \equiv \neg p \lor q$$
 ##### Distribution Laws:
 - **Distributing OR over AND:**
     $$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$$
-    - _Note:_ The outside operator ($\lor$) goes inside the new brackets. The inside operator ($\land$) moves to the middle.
+    - _Note:_ The outside operator ($\lor$) goes inside the new brackets. The inside operator $(\land)$ moves to the middle.
 - **Distributing AND over OR:**
     $$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$$
 ---
@@ -96,6 +96,7 @@ $$\phi_1, \phi_2 \vdash \psi$$
 2. Every line after that must be justified by a **Rule** applied to previous line(s) 
 3. The final line must be the **Conclusion** $(\psi)$
 _**Important:**_ *Note that every line evaluates to True*
+---
 ##### Conjunction $(\land)$ and Double Negation $(\neg\neg)$:
 1. **And-Introduction** $(\land i)$
 	- **Effect:** If you have two lines $x(A)$ and $y(B)$, you can write $A \land B$
@@ -103,12 +104,14 @@ _**Important:**_ *Note that every line evaluates to True*
 	- Where $x$ and $y$ are the line numbers and $A$ and $B$ are previously stated propositions
 	- **Example:**
 		$$\frac{\frac{\phi_1}{\phi_2}}{\phi_1 \land \phi_2}(\land i\; 1, 2)$$
+---
 2. **And-Elimination** $(\land e)$
 	- **Rule:** If you have $A \land B$, you can extract just $A$ (or just $B$)
 	- **Notation:** $\land e \; 1 \; (or \land e \; 2 \text{ for B})$
 	- **Example:**
 		$$\frac{\phi \land \psi}{\phi} \ (\land e1) \quad \text{or} \quad \frac{\phi \land \psi}{\psi} \ (\land e2)$$
-3. **Double Negation $(\neg \neg$ or $\neg e)$**
+---
+3. **Double Negation Elimination $(\neg \neg e)$
 	- **Rule:** $\neg \neg A$ is the same as $A$, so you can remove the double negative
 	- **Notation:** $\neg \neg e \; x$
 ###### Example:
@@ -116,9 +119,9 @@ _**Important:**_ *Note that every line evaluates to True*
 $$\begin{aligned}
 \text{1.} \; \; & p && \text{Premise} \\
 \text{2.} \; \; & \neg \neg(q \land r) && \text{Premise} \\
-\text{3.} \; \; & q \land r && \neg e \;2 \\
-\text{4.} \; \; & r && \land e \;2 \; \;3 \; \longleftarrow \text{(Take the } 2^{\text{nd}} \text{ part of the } 3^{\text{rd}} \text{ line)}\\
-\text{5.} \; \; & p \land r \; \; \checkmark && \land i \; 1, 4\; \;\longleftarrow \text{(AND the } 1^{\text{st}} \text{ line and the } 4^{\text{th}} \text{ line)}
+\text{3.} \; \; & q \land r && \neg \neg e \;2 \\
+\text{4.} \; \; & r && \land e_2 \; \;3 \; \longleftarrow \text{(Take the } 2^{\text{nd}} \text{ part of the } 3^{\text{rd}} \text{ line)}\\
+\text{5.} \; \; & p \land r \; \; \checkmark && \land i \; 1, 4\; \longleftarrow \text{(AND the } 1^{\text{st}} \text{ line and the } 4^{\text{th}} \text{ line)}
 \end{aligned}$$
 ---
 ### Implication & The Boxes
@@ -140,6 +143,7 @@ $$\begin{array}{lll}
 \hline \end{array} \\ 
 \text{6. } A \Rightarrow B & & \Rightarrow i \ 2\textminus 5 
 \end{array}$$
+---
 ###### 2. Implication Elimination $(\Rightarrow e)$
 *Also known as Modus Ponens*
 ###### Rule: 
@@ -154,15 +158,16 @@ $$\begin{aligned}
 \text{3.} \;\; & B && \Rightarrow e \; 1, 2
 \end{aligned}$$
 ---
-### Disjunction & Negation
-###### 1. Disjunction Introduction $(\lor i)$
+### Disjunction
+#### 1. Disjunction Introduction $(\lor i)$
 - If a statement is True, then you can **OR** any other statement to it, and the whole thing remains True
 ###### Example:
-$$\frac{\phi}{\phi \land \psi} \ (\lor i_1) \quad \text{or} \quad \frac{\psi}{\phi \land \psi} \ (\lor i_2)$$
+$$\frac{\phi}{\phi \lor \psi} \ (\lor i_1) \quad \text{or} \quad \frac{\psi}{\phi \lor \psi} \ (\lor i_2)$$
 - **Syntax:** Use $\lor i_1$ (if adding to the right) or  $\lor i_2$ (if adding to the left) + line number
-###### 2. Disjunction Elimination $(\lor e)$
+---
+#### 2. Disjunction Elimination $(\lor e)$
 - If you know $A \lor B$ is True, but you don't know *which* one is True. So, to prove a conclusion $C$, you must prove it works in **both scenarios**
-**The Structure (Two Boxes):**
+###### The Structure (Two Boxes):
 1. **Box 1:** Assume $A$ is true $\rightarrow$ Prove $C$
 2. **Box 2:** Assume $B$ is true $\rightarrow$ Prove $C$
 3. **Conclusion:** Since you get $C$ in _either_ case, $C$ is definitely True
@@ -182,7 +187,8 @@ $$\begin{array}{lll}
 \text{8. } C & && \lor e \ 1, 2 \textminus 4, 5 \textminus 7 
 \end{array}$$
 - **Syntax:** Use $\lor e$ + Line of OR + Range of Box 1 + Range of Box 2
-##### Example: $(p \lor q \vdash q \lor p)$
+---
+##### Disjunction Example: $(p \lor q \vdash q \lor p)$
 - Proof that $\lor$ is Commutative
 - **Plan:**
 	1. **Start:** You have $p \lor q$. You need to use **$\lor e$** (Proof by Cases)
@@ -194,7 +200,7 @@ $$\begin{array}{lll}
 \text{1. } p \lor q & && \text{Premise} \\
 \begin{array}{|lll|} \hline
 \text{2. } p & && \text{Assume} \\
-\text{3. } p \lor q & && \lor i_1 \; 2 \\
+\text{3. } p \lor q & && \lor i_2 \; 2 \\
 \hline \end{array} \\
 \begin{array}{|lll|} \hline
 \text{4. } q & && \text{Assume} \\
@@ -202,3 +208,95 @@ $$\begin{array}{lll}
 \hline \end{array} \\
 \text{6. } q \lor p & && \lor e \; 1, 2 \textminus 3, 4 \textminus 5\\
 \end{array}$$
+---
+### Negation $(\neg)$ & Contradiction $(\bot)$
+###### Notation: $(\bot)$
+- The $\bot$ symbol (called "Bottom") represents a **Contradiction** (False)
+- Its means that we have hit a logical dead end. We have proved that something is both True AND False at the same time (e.g. $P \land \neg P$)
+---
+##### 1. Negation Elimination $(\neg e)$ / Bottom Introduction $(\bot i)$
+- **Rule:** If you have a statement $(A)$ on one line, and its exact opposite $(\neg A)$ on another, you can smash them together to create a **Contradiction** $(\bot)$
+###### Example:
+$$\frac{\phi \quad \neg \phi}{\bot} \ (\neg e \text{ or } \bot i)$$
+- **Notation:** $\neg e$ (or $\bot i$) + the line number of the combined contradicting statements
+---
+##### 2. Bottom Elimination
+_Ex Falso Quodlibet ("From falsehood, anything follows")_
+- Once you have a Contradiction $(\bot)$, you can conclude **ANYTHING** you want
+- Because if the rules are broken, logic goes out the window
+###### Example:
+$$ \frac{\bot}{\phi} \ (\bot e)$$
+- **Notation:** $\bot e$ + the line number of the contradiction
+---
+##### 3. Negation Introduction $(\neg i)$
+*Also known as "Proof by Contradiction" (for negations)*
+###### Steps to prove that something is False $(\neg A)$:
+1. **Assume** the statement is True $A$
+2. Show that this assumption leads to a **Contradiction** $(\bot)$
+3. **Conclusion:** Since assuming $A$ to be True, broke the logic, $A$ must be False
+4. $\therefore$ $\neg A$ is True
+###### Structure:
+$$\begin{array}{lll} 
+\text{1. } \dots & && \\ 
+\begin{array}{|lll|} \hline 
+\text{2. } A & && \text{Assumption} \\ 
+\vdots \\ 
+\text{5. } \bot & && \neg e \ \dots \quad \leftarrow \text{(Crash found)} \\ \hline \end{array} \\ 
+\text{6. } \neg A & && \neg i \ 2 \textminus 5 
+\end{array}$$
+---
+##### Negation Example - Proof of Modus Tollens (MT)
+$x \Rightarrow y, \neg y \vdash \neg x$
+$$\begin{array}{lll}
+\text{1. } x \Rightarrow y & && \text{Premise} \\
+\text{2. } \neg y & && \text{Premise} \\
+\begin{array}{|lll|} \hline
+\text{3. } x & && \text{Assume} \\
+\text{4. } y & &&  e \Rightarrow 3, 1\\
+\text{5. } \bot & && \neg e \; 4, 2\\
+\hline \end{array} \\
+\text{6. } \neg x & && \neg i \; 3 \textminus 5\\
+\end{array}$$
+---
+#### Derived Rules (Theorems)
+###### 1. Modus Tollens (MT)
+_(As proved above)_
+- **Rule:** If $A \Rightarrow B$ is True, and $B$ is False $(\neg B)$, then $A$ must be False $(\neg A)$
+- **Notation:** MT $x, y$ 
+###### Example:
+$$\frac{A \Rightarrow B \quad \neg B}{\neg A} \ (MT)$$
+---
+###### 2. Reductio Ad Absurdum (RAA)
+_("Proof by Contradiction" for **positive** conclusions)_
+- **Method:** To prove $A$, assume $\neg A$, find a contradiction $(\bot)$ then conclude $A$
+- **Difference from Negation Introduction $(\neg i)$:**
+	- $\neg i$: Assume $A \rightarrow$ Contradiction $\rightarrow$ Conclude $\neg A$
+	- $RAA$: Assume $\neg A \rightarrow$ Contradiction $\rightarrow$ Conclude $A$
+- **Notation:** RAA (applied to a box assuming $\neg A$ and ending in $\bot$)
+---
+###### 3. Law of Excluded Middle (LEM)
+- **Concept:** Everything is either True or False ($A \lor \neg A$). There is no third option
+- **Usage:** You can write $A \lor \neg A$ on any line, (without any requirements) usually used to set up a **Proof by Cases** $(\lor e)$
+- **Notation:** LEM (nothing else needed)
+---
+##### Proof of De Morgan's Law
+- **Sequent:** $\neg (p \lor q) \vdash \neg p \land \neg q$
+$$\begin{array}{lll}
+\text{1. } \neg(p \lor q) & && \text{Premise}\\
+\quad \quad \text{(Plan: Get $\neg p$)} \\
+\begin{array}{|lll|} \hline
+\text{2. } p & && \text{Assume} \\
+\text{3. } p \lor q & && \lor i_1 \; 2\\
+\text{4. } \bot & && \bot i \; 3, 1 \\
+\hline \end{array} \\
+\text{5. } \neg p & && \neg i \; 2 \textminus 4 \\
+\quad \quad \text{(Plan: Get $\neg q$)} \\
+\begin{array}{|lll|} \hline
+\text{6. } q & && \text{Assume} \\
+\text{7. } p \lor q & && \lor i_2 \; 6\\
+\text{8. } \bot & && \bot i \; 7, 1 \\
+\hline \end{array} \\
+\text{9. } \neg q & && \neg i \; 6 \textminus 8 \\
+\text{10. } \neg p \land \neg q \;\; \checkmark& && \land i \; 5, 9
+\end{array}$$
+---

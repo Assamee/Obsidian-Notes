@@ -109,8 +109,21 @@ $$\begin{array}{lll}
 \text{7. } p \Rightarrow (q \Rightarrow r) & && i \Rightarrow 2 \textminus 6\\
 \end{array}$$
 ---
-### Disjunction:
-1. 
+### Negation:
+1. $x \Rightarrow y, \neg y \vdash \neg x$
+$$\begin{array}{lll}
+\text{1. } x \Rightarrow y & && \text{Premise} \\
+\text{2. } \neg y & && \text{Premise} \\
+\begin{array}{|lll|} \hline
+\text{3. } x & && \text{Assume} \\
+\text{4. } y & &&  e \Rightarrow 3, 1\\
+\text{5. } \bot & && \neg e \; 4, 2\\
+\hline \end{array} \\
+\text{6. } \neg x & && \neg i \; 3 \textminus 5\\
+\end{array}$$
+
+
+
 
 
 
