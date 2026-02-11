@@ -11,14 +11,12 @@
             "id": "92d40129c35ad522",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Welcome.md",
-                "mode": "source",
-                "source": false
+                "file": "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots/Pasted image 20260210170353.png"
               },
-              "icon": "lucide-file",
-              "title": "Welcome"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260210170353"
             }
           },
           {
@@ -36,7 +34,21 @@
             }
           },
           {
-            "id": "0e3d10130b56ff2d",
+            "id": "132bad7292f53901",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Questions/Logic Practical Week 14.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Logic Practical Week 14"
+            }
+          },
+          {
+            "id": "ae6d87fb95981413",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -45,8 +57,7 @@
               "title": "Graph view"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,8 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "68fefabb771d0bee",
@@ -209,21 +219,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "07d0b0dc174b6fec",
+  "active": "92d40129c35ad522",
   "lastOpenFiles": [
-    "Welcome.md",
+    "Course Notes/SMA/Topic 7 - Power and Taylor Series/Taylor Series.md",
+    "Course Notes/Comp Thinking - COMP1051/Logic.md",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Questions/Logic Practical Week 14.md",
+    "Course Notes/MCS - COMP1021/Converging or Diverging Series Tests.md",
+    "Course Notes/MCS - COMP1021/Inner Product Spaces.md",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots/Pasted image 20260210230540.png",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Questions/Logic Practical Week 13.md",
+    "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots/Pasted image 20260210191535.png",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Questions",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals",
     "Untitled.base",
     "Untitled.canvas",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots/Pasted image 20260210191515.png",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots/Pasted image 20260210180008.png",
+    "Course Notes/Comp Thinking - COMP1051/Logic Practicals/Screenshots/Pasted image 20260210170353.png",
+    "Course Notes/SMA/Topic 3 - Analysing Limits/Methods to Find Limits.md",
+    "Welcome.md",
     "Untitled 1.base",
-    "Course Notes/MCS - COMP1021/Inner Product Spaces.md",
     "create a link.md",
     "2026-02-04.md",
-    "Course Notes/Comp Thinking - COMP1051/Logic.md",
-    "Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests.md",
     "Course Notes/SMA/Topic 6 - Series/Double Summation.md",
-    "Course Notes/SMA/Topic 7 - Power and Taylor Series/Taylor Series.md",
-    "Course Notes/SMA/Topic 3 - Analysing Limits/Methods to Find Limits.md",
-    "Course Notes/MCS - COMP1021/Converging or Diverging Series Tests.md",
     "Course Notes/SMA/Topic 7 - Power and Taylor Series",
     "Course Notes/SMA/Topic 6 - Series/Untitled",
     "Course Notes/SMA/Topic 6 - Series.md",
@@ -233,9 +253,6 @@
     "Course Notes/Algorithms and Data Structures - COMP1081/Untitled.md",
     "Course Notes/Comp Systems - COMP1071/Untitled.md",
     "Untitled 1.md",
-    "Course Notes/Untitled 5",
-    "Course Notes/SMA",
-    "Course Notes/Comp Systems - COMP1071",
-    "Course Notes/Algorithms and Data Structures - COMP1081"
+    "Course Notes/Untitled 5"
   ]
 }

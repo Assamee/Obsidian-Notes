@@ -75,6 +75,15 @@ Since we cannot calculate the exact value of $\xi$, we find the **maximum possib
 	- *Tip:* For increasing functions like $e^{\xi}$, the max is at the larger end of the interval
 3. **Substitute and Solve:** Replace $f^{(N+1)}(\xi)$ with $M$ to form the inequality:
 $$|R_{N+1}(x)| \leq \frac{M}{(N+1)!}|x-a|^{N+1}$$
+###### Proof that the Taylor Series converges to zero when $\lim_{n \rightarrow \infty}{|R_n(x)|} = 0$
+- A necessary and sufficient condition for the Taylor series to converge to $f(x)$ is that:
+$$\begin{aligned}
+& \lim_{n \rightarrow \infty}{|f(x) - P_{n-1}(x)|} = 0\\[1em]
+\Leftrightarrow &  \lim_{n \rightarrow \infty}\left|P_{n-1}(x) + R_n(x) - P_{n-1}(x) \right| = 0 \\
+\Leftrightarrow & \lim_{n \rightarrow \infty}\left|R_n(x) \right| = 0
+\end{aligned}$$
+ 
+ 
  
 
 
