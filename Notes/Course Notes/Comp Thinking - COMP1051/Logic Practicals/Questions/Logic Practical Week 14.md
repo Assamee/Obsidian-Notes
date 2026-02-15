@@ -1,134 +1,81 @@
-Question 1: Natural Deduction $(\land \text{ and } \Rightarrow)$
-![[Pasted image 20260210230540.png]]
-1. $(a \land b) \Rightarrow c, b \Rightarrow a, b \vdash c$
-	$$\begin{array}{lll}
-	\text{1. } (a \land b) \Rightarrow c & && \text{Premise}\\
-	\text{2. } b\Rightarrow a & && \text{Premise}\\
-	\text{3. } b & && \text{Premise}\\
-	\text{4. } a & && e \Rightarrow 3, 2\\
-	\text{5. } a \land b & && i \land 4, 3\\
-	\text{6. } c \;\; \checkmark & && e \Rightarrow 5, 1\\
-	\end{array}$$
-2. $p \Rightarrow (q \Rightarrow r) \vdash (p \land q) \Rightarrow r$
-	$$\begin{array}{lll}
-	\text{1. } p \Rightarrow (q \Rightarrow r) & && \text{Premise}\\
-	\begin{array}{|lll|} \hline
-	\text{2. } p \land q & && \text{Assume}\\
-	\text{3. } p & && \land e_1 \; 2\\
-	\text{4. } q & && \land e _2 \; 2\\
-	\text{5. } q \Rightarrow r & && e \Rightarrow 3, 1\\
-	\text{6. } r & && e \Rightarrow 4, 5\\
-	\hline \end{array} \\
-	\text{7. } (p \land q) \Rightarrow r & && \Rightarrow i \; 2 \textminus 6 \\
-	\end{array}$$
-3. $(A \Rightarrow B) \vdash (B \Rightarrow C) \Rightarrow (A \Rightarrow C)$
-	$$\begin{array}{lll}
-	\text{1. } (A \Rightarrow B) & && \text{Premise}\\
-	\begin{array}{|lll|} \hline
-	\text{2. } B \Rightarrow C & && \text{Assume}\\
-	\begin{array}{|lll|} \hline 
-	\text{3. } A & && \text{Assume}\\
-	\text{4. } B & && e \Rightarrow 1, 3\\
-	\text{5. } C & && e \Rightarrow 4, 2\\
-	\hline \end{array} \\
-	\text{6. } A \Rightarrow C & && \Rightarrow i \; 3 \textminus 5\\
-	\hline \end{array} \\
-	\text{7. } (B \Rightarrow C) \Rightarrow (A \Rightarrow C) & && \Rightarrow i \; 2 \textminus 6\\
-	\end{array}$$
-4. **The Logic:**
-**Goal:** $r \Rightarrow (p \Rightarrow q)$
-    - Open **Box 1**: Assume **$r$**.
-    - **New Goal:** $p \Rightarrow q$
-        - Open **Box 2**: Assume **$p$**.
-        - **New Goal:** $q$
-            - Use premises to find $q$.
-        - Close Box 2.
-    - Close Box 1.
-$p \Rightarrow (q \land r) \vdash r \Rightarrow (p \Rightarrow q)$
+![[Pasted image 20260213141159.png]]
+###### 1. $p \lor (q \land r) \vdash p \lor q$
 $$\begin{array}{lll}
-\text{1. } p \Rightarrow (q \land r) & && \text{Premise} \\
-\begin{array}{|lll|} \hline
-\text{2. }  r & && \text{Assume}\\
-\begin{array}{|lll|} \hline
-\text{3. }  p & && \text{Assume}\\
-\text{4. }  q \land r & && e \Rightarrow 3, 1\\
-\text{5. }  r & && \land e_2 \; 4\\
-\text{6. }  q & && \land e_1 \; 4\\
-\hline \end{array} \\
-\text{7. }  p \Rightarrow q & && i \Rightarrow 3 \textminus 6\\
-\hline \end{array} \\
-\text{8. } r \Rightarrow (p \Rightarrow q)& && i \Rightarrow 2 \textminus 7
-\end{array}$$
-# Extra Questions
-1. $p \Rightarrow q, q \Rightarrow r \vdash p \Rightarrow r$
-$$\begin{array}{lll}
-\text{1. } p \Rightarrow q & && \text{Premise} \\
-\text{2. } q \Rightarrow r & && \text{Premise} \\
-\begin{array}{|lll|} \hline
-\text{3. } p & &&  \text{Assume}\\
-\text{4. } q & &&  e \Rightarrow 3, 1\\
-\text{5. } r & &&  e \Rightarrow 4, 2\\
-\hline \end{array} \\
-\text{6. } p \Rightarrow r& && i \Rightarrow 3 \textminus 5\\
-\end{array}$$
-2. $p \Rightarrow (q \Rightarrow r) \vdash q \Rightarrow (p \Rightarrow r)$
-$$\begin{array}{lll}
-\text{1. } p \Rightarrow (q \Rightarrow r) & && \text{Premise} \\
-\begin{array}{|lll|} \hline
-\text{2. } q & && \text{Assume}\\
-\begin{array}{|lll|} \hline
-\text{3. } p & && \text{Assume}\\
-\text{4. } q \Rightarrow r & && e \Rightarrow 3, 1 \\
-\text{5. } r & && e \Rightarrow 2, 4 \\
-\hline \end{array} \\
-\text{6. } p \Rightarrow r & && i \Rightarrow 3 \textminus 5\\
-\hline \end{array} \\
-\text{7. } q \Rightarrow (p \Rightarrow r) & && i \Rightarrow 2 \textminus 6
-\end{array}$$
-3. $p \vdash q \Rightarrow (p \land q)$
-$$\begin{array}{lll}
-\text{1. } p & && \text{Premise} \\
-\begin{array}{|lll|} \hline
-\text{2. } q & && \text{Assume} \\
-\text{3. } p \land q & && \land i \; 1, 2\\
-\hline \end{array} \\
-\text{4. }q \Rightarrow (p \land q) & && i \Rightarrow 2 \textminus3
-\end{array}$$
-4. $(p \land q) \Rightarrow r \vdash p \Rightarrow (q \Rightarrow r)$
-$$\begin{array}{lll}
-\text{1. } (p \land q) \Rightarrow r & && \text{Premise} \\
+\text{1. } p \lor (q \land r) & && \text{Premise} \\
 \begin{array}{|lll|} \hline
 \text{2. } p & && \text{Assume}\\
+\text{3. } p \lor q & && \lor i_1 \; 2 \\
+\hline \end{array} \\
 \begin{array}{|lll|} \hline
-\text{3. } q & && \text{Assume}\\
-\text{4. } p \land q & && \land i \; 2, 3\\
-\text{5. } r & && e \Rightarrow 4, 1\\
+\text{4. } q \land r & && \text{Assume}\\
+\text{5. } q & && \land e_1 \; 4\\
+\text{6. } p \lor q & && \lor i_2 \; 5 \\
 \hline \end{array} \\
-\text{6. } q \Rightarrow r & && i \Rightarrow 3 \textminus 5\\
-\hline \end{array} \\
-\text{7. } p \Rightarrow (q \Rightarrow r) & && i \Rightarrow 2 \textminus 6\\
+\text{7. } p \lor q & && \lor e \; 1, 2 \textminus 3, 4 \textminus 6
 \end{array}$$
----
-### Negation:
-1. $x \Rightarrow y, \neg y \vdash \neg x$
+###### 2. $p \Rightarrow r, q \Rightarrow s, p \lor q \vdash r \lor s$
 $$\begin{array}{lll}
-\text{1. } x \Rightarrow y & && \text{Premise} \\
-\text{2. } \neg y & && \text{Premise} \\
+\text{1. } p \Rightarrow r & && \text{Premise} \\
+\text{2. } q \Rightarrow s & && \text{Premise} \\
+\text{3. } p \lor q & && \text{Premise} \\
 \begin{array}{|lll|} \hline
-\text{3. } x & && \text{Assume} \\
-\text{4. } y & &&  e \Rightarrow 3, 1\\
-\text{5. } \bot & && \neg e \; 4, 2\\
+\text{4. } p & && \text{Assume} \\
+\text{5. } r & && \Rightarrow e \; 4, 1 \\
+\text{6. } r \lor s & && \lor e_1 \; 5 \\
 \hline \end{array} \\
-\text{6. } \neg x & && \neg i \; 3 \textminus 5\\
+\begin{array}{|lll|} \hline
+\text{7. } q & && \text{Assume} \\
+\text{8. } s & && \Rightarrow e \; 7, 2\\
+\text{9. } r \lor s & && \lor e_2 \; 8 \\
+\hline \end{array} \\
+\text{10. } r \lor s & && \lor e \; 3, 4 \textminus 6, 7 \textminus 9
 \end{array}$$
-
-
-
-
-
-
-
-
-$\underline{\textbf{Related Pages: }}$
-- [[Logic]]
-- [[Logic Practical Week 13]]
+###### 3. $p \land (q \lor r) \vdash (p \land q) \lor (p \land r)$
+$$\begin{array}{lll}
+\text{1. } p \land (q \lor r) & && \text{Premise}\\
+\text{2. } p & && \land e \; 1 \\ 
+\text{3. } q \lor r & && \land e \; 1 \\
+\begin{array}{|lll|} \hline
+\text{4. } q & && \text{Assume} \\ 
+\text{5. } p \land q & && \land i \; 2, 4 \\
+\text{6. } (p \land q) \lor (p \land r) & && \lor i_1 \; 5 \\
+\hline \end{array} \\
+\begin{array}{|lll|} \hline
+\text{7. } r & && \text{Assume} \\ 
+\text{8. } p \land r & && \land i \; 2,7 \\
+\text{9. } (p \land q) \lor (p \land r) & && \lor i_2 \; 8 \\
+\hline \end{array} \\
+\text{10. } (p \land q) \lor (p \land r) & && \lor e \;  3, 4 \textminus6, 7 \textminus 9
+\end{array}$$
+###### ![[Pasted image 20260213153750.png]]
+###### 1. $\neg (r \lor t) \vdash \neg r \land \neg t$
+$$\begin{array}{lll}
+\text{1. } \neg (r \lor t) & && \text{Premise} \\
+\begin{array}{|lll|} \hline 
+\text{2. } r & && \text{Assume} \\
+\text{3. } r \lor t & && \lor i_1 \; 2 \\
+\text{4. } \bot & && \bot i \;1, 3 \\
+\hline \end{array} \\
+\text{5. } \neg r & && \neg i \; 2 \textminus 4\\
+\begin{array}{|lll|} \hline 
+\text{6. } t & && \text{Assume} \\
+\text{7. } r \lor t & && \lor i_2 \; 2 \\
+\text{8. } \bot & && \bot i \;1, 7 \\
+\hline \end{array} \\
+\text{9. } \neg t & && \neg i \; 6 \textminus 8\\
+\text{10. } \neg r \land \neg t & && \land i \; 5, 9\\
+\end{array}$$
+###### 2. $p \Rightarrow (q \lor r), \neg q, \neg r \vdash \neg p$
+$$\begin{array}{lll}
+\text{1. } p \Rightarrow (q \lor r) & && \text{Premise} \\
+\text{2. } \neg q & && \text{Premise} \\
+\text{3. } \neg r & && \text{Premise} \\
+\begin{array}{|lll|} \hline
+\text{4. } p & && \text{Assume} \\
+\text{5. } q \lor r & && \Rightarrow e\; 4, 1\\
+\text{6. } q & && \lor e_1 \; 6 \\
+\text{7. } \bot & && \bot i \;  \\
+\hline \end{array} \\
+\text{8. } \neg p & && \neg i \; 4 \textminus 7 \\
+\end{array}$$
+###### 4. 

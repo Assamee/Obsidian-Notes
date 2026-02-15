@@ -59,4 +59,4 @@ Question 9: Conjunctive Normal Form
 
 $\underline{\textbf{Related Pages: }}$
 - [[Logic]]
-- [[Logic Practical Week 14]]
+- [[Logic Practical Week 14 (Prep)]]

@@ -1,1 +1,13 @@
-"Notes/.obsidian/workspace.json" 
+# --- Obsidian Config ---
+# Ignore the entire settings folder for a clean repo
+Notes/.obsidian/
+
+# --- Files to Exclude ---
+# Ignore temp files Obsidian creates when making new notes
+Untitled*.md
+
+# Ignore the default welcome message
+Notes/Welcome.md
+
+# Ignore image files
+*.png
