@@ -6,6 +6,8 @@ This repository is my personal knowledge base for my first year of Computer Scie
 
 It's a "work in progress" that I update as I learn new modules.
 
+> **⚠️ Note on Formatting:** These notes use advanced math rendering ($\LaTeX$) designed for [Obsidian](https://obsidian.md/). You may see raw code blocks instead of equations when viewing directly on GitHub. For the best experience, clone this repo and open it locally in Obsidian.
+
 ## 🧠 What's Inside?
 A collection of revision notes and non-assessed practical exercises covering:
 
