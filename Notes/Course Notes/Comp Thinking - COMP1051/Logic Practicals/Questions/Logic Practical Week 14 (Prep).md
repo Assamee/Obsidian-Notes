@@ -121,8 +121,29 @@ $$\begin{array}{lll}
 \hline \end{array} \\
 \text{6. } \neg x & && \neg i \; 3 \textminus 5\\
 \end{array}$$
+![[Pasted image 20260218122334.png]]
+Question 4: 
+**Sequent:** $p \Rightarrow (q \Rightarrow (r \land s)), \neg(r \lor t), (s \land q) \Rightarrow t \vdash q \Rightarrow \neg p$
+$$\begin{array}{lll}
+\text{1. } p \Rightarrow (q \Rightarrow (r \land s)) & && \text{Premise} \\
+\text{2. } \neg(r \lor t) & && \text{Premise} \\
+\text{3. } (s \land q) \Rightarrow t & && \text{Premise} \\
+\begin{array}{|lll|} \hline
+\text{4. } q & && \text{Assume} \\
+\begin{array}{|lll|} \hline
+\text{5. } p & && \text{Assume} \\
+\text{6. } q \Rightarrow (r \land s) & && e \Rightarrow 5, 1\\
+\text{7. } r \land s & && e \Rightarrow 4, 6\\
+\text{8. } r & && \land e_1 \; 7\\
+\text{9. } r \lor t & && \lor i \; 8\\
+\text{10. } \bot & && \bot i \; 9,2\\
+\hline \end{array} \\
+\text{11. } \neg p & && \neg i \; 5 \textminus 10 \\
+\hline \end{array} \\
+\text{12. } q \Rightarrow \neg p & && i \Rightarrow 4 \textminus 11\\
+\end{array}$$
 
-
+![[Pasted image 20260218130751.png]]
 
 
 
