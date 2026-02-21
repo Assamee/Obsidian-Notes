@@ -78,4 +78,8 @@ $$\begin{array}{lll}
 \hline \end{array} \\
 \text{8. } \neg p & && \neg i \; 4 \textminus 7 \\
 \end{array}$$
-###### 4. 
+$\underline{\textbf{Related Pages: }}$
+- [[Logic]]
+- [[Logic Practical Week 13]]
+- [[Logic Practical Week 14 (Prep)]]
+- [[Logic Practical Week 15]]

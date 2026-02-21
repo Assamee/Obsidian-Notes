@@ -92,4 +92,5 @@ Truth Table:
 
 $\underline{\textbf{Related Pages: }}$
 - [[Logic]]
+- [[Sat-Solvers]]
 - [[Logic Practical Week 15]]

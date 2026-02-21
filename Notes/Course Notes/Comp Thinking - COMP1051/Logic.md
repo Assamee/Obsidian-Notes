@@ -300,3 +300,10 @@ $$\begin{array}{lll}
 \text{10. } \neg p \land \neg q \;\; \checkmark& && \land i \; 5, 9
 \end{array}$$
 ---
+$\underline{\textbf{Related Pages: }}$
+- [[Resolution]]
+- [[Sat-Solvers]]
+- [[Logic Practical Week 15]]
+- [[Logic Practical Week 14]]
+- [[Logic Practical Week 14 (Prep)]]
+- [[Logic Practical Week 13]]
