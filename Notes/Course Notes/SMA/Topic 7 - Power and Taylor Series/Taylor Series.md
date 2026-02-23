@@ -1,3 +1,11 @@
+### Power Series
+- Used to estimate functions at a specific point, they are most accurate at the centre $(x=a)$
+
+A power series centred at $x=a$ is an infinite series of the form:
+$$\sum_{n=0}^{\infty}c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+...$$
+- **Variable:** $x$ is the variable of the function
+- **Centre:** $a$ is a constant representing the point around which the series is expanded (also known as the point of expansion)
+- **Coefficients:** $c_n$ represents a sequence of constant terms that determine the specific shape and properties of the series.
 # Standard Maclaurin Expansions
 
 **Maclaurin Series** = A Taylor series expansion of a function $f(x)$ about the point $a=0$. It is given by the power series $\sum_{n=0}^{\infty}{{\frac{f^{(n)}(0)}{n!}}{x^n}}$
