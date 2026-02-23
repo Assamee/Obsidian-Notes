@@ -36,4 +36,6 @@ $$\sum_{i=1}^2{(3i + 14)} = 3\sum_{i=1}^2{i} + \sum_{i=1}^2{(14)}$$
 $$\sum_{i=1}^2{(3i + 14)} = 3(\frac{1}{2})(2)(3) + 28$$
 $\text{Final Answer:}$
 $$\sum_{i=1}^2{(3i + 14)} = 37$$
-
+---
+$\underline{\textbf{Related Pages: }}$
+- [[Converging or Diverging Series Tests]]
