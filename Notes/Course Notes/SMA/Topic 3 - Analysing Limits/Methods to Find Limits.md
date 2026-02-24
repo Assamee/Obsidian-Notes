@@ -64,5 +64,5 @@ $$\lim_{x \to 1} \frac{x^2+x-2}{x^2+2x-3}$$
 - **The Rule:** A function $f(x)$ is continuous at $x=a$ if $\lim_{x \to a} f(x) = f(a)$ (and $f(a)$ exists)
 ---
 $\underline{\textbf{Related Pages: }}$
-- [[Converging or Diverging Series Tests]]
+- [[Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests]]
 - [[Methods to Find Limits]]

@@ -38,4 +38,4 @@ $\text{Final Answer:}$
 $$\sum_{i=1}^2{(3i + 14)} = 37$$
 ---
 $\underline{\textbf{Related Pages: }}$
-- [[Converging or Diverging Series Tests]]
+- [[Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests]]

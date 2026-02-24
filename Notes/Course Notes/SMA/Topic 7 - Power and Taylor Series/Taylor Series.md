@@ -92,7 +92,7 @@ $$\begin{aligned}
 \end{aligned}$$
 ---
 $\underline{\textbf{Related Pages: }}$
-- [[Converging or Diverging Series Tests]]
+- [[Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests]]
 - [[Methods to Find Limits]]
 - [[Taylor Series]]
 
