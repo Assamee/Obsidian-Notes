@@ -95,4 +95,4 @@ $\textbf{Note: } \text{Does not check for absolute convergence}$
 $\underline{\textbf{Related Pages: }}$
 - [[Double Summation]]
 - [[Methods to Find Limits]]
-- [[Taylor Series]]
+- [[Power, Maclaurin & Taylor Series]]

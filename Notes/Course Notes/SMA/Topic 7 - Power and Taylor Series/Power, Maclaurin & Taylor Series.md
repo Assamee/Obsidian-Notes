@@ -94,7 +94,7 @@ $$\begin{aligned}
 $\underline{\textbf{Related Pages: }}$
 - [[Course Notes/SMA/Topic 6 - Series/Converging or Diverging Series Tests]]
 - [[Methods to Find Limits]]
-- [[Taylor Series]]
+- [[Power, Maclaurin & Taylor Series]]
 
  
  
