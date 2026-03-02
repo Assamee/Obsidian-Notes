@@ -16,8 +16,8 @@
 - The length of a path or a cycle is the number of edges in it.
 ##### Distance ($dist(u,v)$):
 - The length of a shortest path from $u$ to $v$ if such a path exists, and $\infty$ otherwise.
-###### Diameter:
-- The largest distance between two vertices in a graph
+###### Diameter: (The amount of edges between the furthest 2 nodes)
+- If you list the lengths of the shortest path between all pairs of edges, the diameter is the longest of these shortest paths (How far apart the most separated pair of vertices are)
 ---
 ### Shortest Path Problem
 - Finding the path from a given vertex $u$ and a destination vertex $v$ with the smallest possible length (or weight)
@@ -31,12 +31,24 @@
 #### Theorem: Minimum Number of Components
 - **Theorem:** Every graph $G=(V,E)$ contains at least $|V|-|E|$ connected components
 - **Usage:** If $G = (V,E)$ is connected then $|E| \geqslant |V| -1$
+
+---
+### Strong Connectivity
+#### Weakly Connected
+- A diagraph $G$ is weakly connected if the graph obtained from forgetting directions is connected
+#### Strongly Connected
+- A directed graph $G$ is strongly connected if any two distinct vertices are connected by directed paths in both directions
+- **Example:** You can legally travel from vertex $u$ to vertex $v$, _and_ you can legally travel from vertex $v$ back to vertex $u$, while obeying the one-way arrows
+#### Strongly Connected Component (SCC)
+- A strongly connected component (or strong component) of a diagraph $G$ is a maximal strongly connected subgraph of $G$
+- **Simple Explanation:** A subgraph from a diagraph where every vertex can legally travel to every other vertex in the subgraph
 ---
 ### Eulerian Circuits & Hamiltonian Cycles
 #### Eulerian Circuits
 - A circuit in graph $G$ where you travel along the edges, starting and finishing at the same vertex, and traverse **_each edge_** exactly once
 - Computationally easy to detect Eulerian circuits
-#### Hamiltonian Circuits
+- **Theorem:** A connected graph with **at least two vertices** has an Eulerian circuit _**iff**_ each of its vertices have an even degree
+#### Hamiltonian Cycles
 - A cycle in graph $G$ where you travel along the edges, start and finish at the same vertex, and visit **_each vertex_** exactly once
 - Computationally hard to determine Hamiltonian cycles
 ---

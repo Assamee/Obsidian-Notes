@@ -42,17 +42,17 @@ $$\{\{y, u\}, \{\overline{x}, u\}, \{\overline{y}, x, \overline{u}\}, \{x, v\}, 
 ---
 # The DPLL Algorithm
 - Used to reduce the search space for SAT-solvers
-#### Pure Literal Elimination
-- **Pure Literals:** A literal $x$ in a clause-set $F$ is considered a "pure literal" if some clauses contain $x$, but no clause contains its exact opposite $\overline x$
-- **Elimination:** Because $\overline x$ does not exist anywhere in the set, we can safely assign $x$ to be true and completely remove all clauses that contain it, leaving a new clause-set $F'$
-- **Equisatisfiability:** The original set $F$ and the reduced set $F'$ are equisatisfiable
-- **Notation:** $PL(F)$ denotes the smallest possible clause-set obtained by applying pure literal elimination as many times as possible
 #### Unit Propagation
 - **Unit Clauses:** A unit clause is a clause containing only one literal $\{l\}$
 - **Propagation:** If a clause-set contains $\{l\}$, that literal *must* be true $(l=1)$ for the entire formula to be satisfied
 	$\therefore$ We can propagate this forced assignment throughout the clause-set to obtain $F$
 - **Notation:** $UP(F)$ is the clause-set obtained by applying unit propagation as often as possible until no clauses remain
 - **Equisatisfiability:** $F$ and $UP(F)$ are always equisatisfiable
+#### Pure Literal Elimination
+- **Pure Literals:** A literal $x$ in a clause-set $F$ is considered a "pure literal" if some clauses contain $x$, but no clause contains its exact opposite $\overline x$
+- **Elimination:** Because $\overline x$ does not exist anywhere in the set, we can safely assign $x$ to be true and completely remove all clauses that contain it, leaving a new clause-set $F'$
+- **Equisatisfiability:** The original set $F$ and the reduced set $F'$ are equisatisfiable
+- **Notation:** $PL(F)$ denotes the smallest possible clause-set obtained by applying pure literal elimination as many times as possible
 #### Algorithm DPLL(F):
 1. **Reduce with UP:** Set $F := UP(F)$
 2. **Reduce with PL:** Set $F := PL(F)$

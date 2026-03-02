@@ -58,6 +58,29 @@
 (v4) -------- (v3)
 ```
 ---
+#### $k$-Regular Graphs
+- A graph is $k$-regular (or simply regular) if every vertex in the graph has the exact same degree, $k$ (note that any letter could be used for $k$)
+**Examples:**
+- **Paths $(P_n)$** aren't regular as the end vertices always have a degree of $1$, while the internal vertices have a degree of $2$
+- **Cycles $(C_n)$** are always **2-Regular** 
+- **Complete Graphs $(K_n)$** are always **($n-1$)-Regular**, as each vertex is connected to $n-1$ nodes
+- **Complete Bipartite Graphs $(K_{p,q})$** is regular only if $p=q$
+- **Hypercubes $(Q_n)$** are always $n$-regular, as every binary string of length $n$ has exactly $n$ possible bit flips available, so every vertex has $n$ neighbours
+---
+#### Tournament Graphs
+- A diagraph that models a competitive system (like a sports tournament), where the vertices are the teams and a directed edge from vertex $x$ to vertex $y$ indicates that team $x$ wins over (or dominates) team $y$
+###### Absolute Winner:
+- A team that dominates everyone else (an "unbeatable" team). Visually, this would be a node with outgoing edges pointing to every other vertex in the graph
+###### Absolute Loser:
+- A team that is dominated by everyone else. Visually, this would be a vertex with only incoming edges coming from every other vertex
+###### Example: (Rock-Paper-Scissors)
+``` Plaintext
+       (Scissors)
+        /      ^
+       v        \
+ (Paper) ---> (Rock)
+```
+---
 #### Complete Bipartite Graphs ($K_{p,q}$)
 - $K_{p,q}$ is a complete bipartite graph consisting of two disjoint sets of vertices $p$ and $q$. Every vertex in $p$ is connected to every vertex in $q$, but there are no vertices between edges in the same set
 - It has exactly $pq$ edges
