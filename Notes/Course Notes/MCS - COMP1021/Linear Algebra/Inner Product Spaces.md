@@ -246,3 +246,5 @@ $$\begin{aligned} \langle u, v \rangle &= u^\dagger v \\
 $\underline{\textbf{Related Pages: }}$
 - [[Complex Matrices]]
 - [[Gram-Schmidt]]
+- [[QR Decomposition & Least Squares]]
+- [[Linear Regression]]

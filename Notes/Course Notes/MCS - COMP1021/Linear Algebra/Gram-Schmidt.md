@@ -39,6 +39,8 @@ $$v_3 = u_3 - proj_{_{W_2}} u_3 = u_3 - \frac{\langle u_3, v_1 \rangle}{||v_1||^
 5. **Optional Final Step:** If an _orthonormal_ basis is needed, normalise all resulting $v_i$ vectors at the end
 ---
 ### Example: Gram-Schmidt
+
+^0ca6fd
 ##### The Setup:
 We are given a standard set of three linearly independent vectors that form a basis for $\mathbb{R}^3$:
 $$u_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \quad 
@@ -81,3 +83,5 @@ $$x = \frac{\langle x, v_1 \rangle}{||v_1||^2} v_1 + \frac{\langle x, v_2 \rangl
 ---
 $\underline{\textbf{Related Pages: }}$
 - [[Inner Product Spaces]]
+- [[QR Decomposition & Least Squares]]
+- [[Linear Regression]]
