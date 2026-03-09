@@ -109,4 +109,5 @@ _Separating these two concepts allows for maximum flexibility if policy decision
 - **Examples:** Mach, and the Mac OS X kernel (Darwin), which is partly based on Mach
 ---
 $\underline{\textbf{Related Pages: }}$
-- [[Processes & Threads]]
+- [[Processes]]
+- [[Threads & Concurrency]]
