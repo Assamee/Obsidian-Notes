@@ -58,3 +58,102 @@ An **Interpretation** (or structure) gives meaning to the logical formulae. For 
 ###### 4. Evaluate Universal Quantifiers $(\forall)$:
 - For a statement like $\forall{x} \; \phi,$ verify that the condition holds true for _all_ possible values of $x$ (E.g. every vertex in a graph)
 ---
+## Logical Equivalence
+- Things you can do with two logically equivalent formula $(\phi \equiv\ \psi)$
+##### Substitution:
+- If a sub-formula is logically equivalent to another formula, you can swap them out without changing the overall semantics of the larger sentence
+##### Renaming Variables:
+- You can change the name of a quantified variable (e.g. replacing $x$ with $y$) without changing the semantics. For example, $\forall x\phi(x)\equiv\forall y\phi(y)$ 
+- This applies to both universal ($\forall$) and existential ($\exists$) quantifiers
+- Obviously don't rename to a variable that is already used in the formula
+---
+#### Quantifier Negation:
+Negations can be "pushed through" quantifiers by flipping the quantifier to its opposite
+###### Universal to Existential $(\forall \rightarrow \exists)$:
+- Pushing a negation through a "For All" turns it into an "Exists" $\left( \text{e.g. } \neg\forall x\phi\equiv\exists x\neg\phi \right)$
+###### Existential to Universal $(\exists \rightarrow \forall)$:
+- Pushing a negation through an "Exists" turns it into a "For All". $\left(  \text{e.g. } \neg\exists x\phi\equiv\forall x\neg\phi \right)$
+---
+#### Manipulating Quantifiers:
+Quantifiers can be extracted from inside logical connectives ($\wedge$ or $\vee$) to the very front of the formula
+##### Extraction Example:
+$$\forall x\phi\wedge\exists y\psi\equiv\forall x\exists y(\phi\wedge\psi)$$
+##### Variable Clashes:
+- You can only pull out quantifiers if the quantified variables don't clash with each other. If you have two separate sub-formulae that both use $x$, you _must_ rename one of them (e.g. to $z$)
+- Have to ensure that they have "nothing to do with each other" before pulling the quantifiers to the front
+##### Order Matters:
+- Swapping the order of quantifiers changes the meaning of a formula
+- **Example:** 
+$$\forall x\exists yE(x,y) \not\equiv \exists x\forall yE(x,y)$$
+---
+#### An Example of why Order Matters:
+- Suppose we have a simple directed graph, with a domain of four vertices: $\{1, 2, 3, 4\}$. Where the set of edges are $E = \{(1,2), (2,3), (3,4), (4,1)\}$
+###### Diagram:
+``` Plaintext
+(1) ---> (2)
+ ^        |
+ |        v
+(4) <--- (3)
+```
+###### For All $x$, there Exists a $y$:
+- **$\forall x\exists y \; E(x,y)$ is True:** Every single vertex ($x$) has at least one outgoing arrow to another vertex ($y$)
+###### There Exists an $x$ For Each $y$:
+- **$\exists x\forall yE(x,y)$ is False:** There is no single "super-vertex" ($x$) that has an outgoing arrow pointing to every other vertex in the entire graph
+---
+## Prenex Normal Form
+- A first-order formula is in prenex normal form (PNF) if all of its quantifiers are clustered at the front, and the rest of the formula contains no quantifiers
+##### Structure:
+$$Q_{1}x_{1}Q_{2}x_{2}...Q_{k}x_{k}\phi$$
+- **Notation:** Each $Q$ is a quantifier ($\forall$ or $\exists$), each $x$ is a variable, and $\phi$ is a strictly quantifier-free formula (often called the matrix)
+- **Usage:** 
+---
+### Parse Trees (Converting to PNF)
+- To convert a complex formula into PNF, we use its parse tree to systematically push quantifiers outwards
+##### 1. Start at the Leaves:
+- Begin at the bottom of the parse tree with the smallest atomic sub-formulae
+- Since they contain no quantifiers, they are trivially already in PNF
+##### 2. Work Upwards (AND / ORs):
+When you move up to an $\land \text{ or } \lor$ node, you combine its two childe sub-trees
+- First, rename any bound variables so that the two sub-trees share absolutely no variables names
+- Then, pull all quantifiers from both sub-trees to the very front
+##### 3. Work Upwards (NOT):
+- When you move up to a $\neg$ node, you must apply the quantifier negation rules
+- Push the negation _through_ the prefix of quantifiers, flipping each quantifier until the negation rests directly next to the quantifier-free matrix
+##### 4. Work Upwards (Quantifiers):
+- When you move up to a $\forall$ or $\exists$ node, add the quantifier to the front of the growing formula
+---
+### Example of Converting to PNF (Parse Trees)
+- **Question:** Convert this formula into PNF $$\neg \forall (P(x) \land \exists y \, Q(x, y))$$
+##### Parse Tree:
+``` Plaintext
+        (¬)
+         |
+       (∀x)
+         |
+        (∧)
+       /   \
+    P(x)  (∃y)
+            |
+         Q(x,y)
+```
+##### Step 1: Evaluate the Leaves
+- The atomic formulae $P(x)$ and $Q(x, y)$ have no quantifiers, so they are trivially in prenex normal form
+##### Step 2: Evaluate the $\exists y$ Sub-tree
+- We move up to the $\exists y$ node, and add it to the front of $Q(x, y)$
+$$\textbf{Resolves to: } \exists y \, Q(x,y)$$
+##### Step 3: Evaluate the $\land$ Sub-tree
+- We move up to the $\land$ node, and combine its left and right children, pulling any quantifiers to the front. Because $y$ doesn't appear in $P(x)$, we don't need to rename any variables
+$$\textbf{Resolves to: } \exists y(P(x)\wedge Q(x,y))$$
+##### Step 4: Evaluate the $\exists x$ Sub-tree
+- We move up to the $\forall x$ node, and add it to the front of the formula
+$$\textbf{Resolves to: } \forall x\exists y(P(x)\wedge Q(x,y))$$
+##### Step 5: Evaluate the $\neg$ Sub-tree (The root node)
+- We move up to the $\neg$ node, and push the negation _through_ the prefix, flipping any quantifiers we pass through
+- The $\forall x$ flips to $\exists x$, and the $\exists y$ flips to $\forall y$
+$$\textbf{Resolves to: } \exists x\forall y \; \neg(P(x)\wedge Q(x,y))$$
+---
+$\underline{\textbf{Related Pages: }}$
+- [[Logic]]
+- [[Resolution]]
+- [[Sat-Solvers]]
+- [[First-Order Logic]]

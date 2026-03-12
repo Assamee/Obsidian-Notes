@@ -355,3 +355,57 @@ $$\begin{array}{|lll|} \hline
 ##### SLD Resolution:
 - This stands for _Selected, Linear, Definite_ clause resolution. It is a highly efficient algorithm that applies **linear** and **input resolution** strictly to Horn clauses
 ---
+## Modelling Problems for SAT-Solving
+- We can use SAT-Solvers to solve real-world problems by modelling any rules or constraints as formal propositional logic
+#### Method:
+###### 1. Define the Variables:
+- Introduce propositional variables to represent clear outcomes. E.g. $L2$ could mean that "Louis came $2^{nd}$," in a race, or graph k-colouring, $v_{j}$ means "vertex $v$ gets colour $j$."
+###### 2. Define the Constraints:
+- Translate the rules of the problem into logical clauses using standard normal form structures (e.g. CNF)
+###### 3. Combine & Solve:
+- Combine all constraint clauses using conjunctions ($\wedge$) and feed them into a SAT-solver to find a satisfying truth assignment
+---
+### Common Constraint Patterns:
+##### "At Least One" (Inclusivity):
+- Represented by a simple disjunction of all possibilities
+- **Example:** $(L1\vee L2\vee L3)$ ensures that Louis gets at least one of the three positions, "At Least $3^{rd}$."
+##### "At Most One" (Exclusivity):
+- Represented by pairing every option in negative clauses to ensure they cannot both be true simultaneously
+- **Example:** $(\neg L1\vee\neg L2)$ and $(\neg L2\vee\neg L3)$ and $(\neg L1\vee\neg L3)$ ensures Louis can only hold one position
+##### "Exactly One":
+- This is achieved by combining both the "At Least One" and "At Most One" constraints together
+##### Conflict/Exclusion (Graph Colouring):
+- To ensure connected nodes (edges) do not share a condition, negate the variables across the edge
+- **Example:** $(\neg u_{j}\vee\neg v_{j})$ ensures vertex $u$ and vertex $v$ cannot both be assigned colour $j$
+---
+### DIMACS CNF Format
+- A standard plain-text format used to input CNF formulae into SAT-Solvers. It strips away logical symbols and uses pure integers
+#### Syntax & Structure:
+##### 1. Comments:
+- Any line starting with a lower-case `c` is a comment (ignored by the SAT-Solver)
+##### 2. Declaring the Format:
+- A line at the top of a clause set to declare the format and size of the problem. It is formatted as `p cnf [variables] [clauses]`
+- `[variables]` is the total number of unique variables.
+- `[clauses]` is the total number of clauses.
+##### 3. Variables as Integers:
+- Variables are represented with integers (e.g. $x_1$ could be $1$). $0$ is forbidden as a variable name
+- Negated literals are represented with negative integers (e.g. $\neg x_1$ would be $-1$)
+##### 4. Clause Termination:
+- Every clause must end with the number `0`. A clause can span multiple lines, or multiple clauses can be written on the same line, as long as they are separated by a `0`
+---
+### DIMACS Example
+- Let's translate the following logical formula: $(x_{1}\vee\neg x_{2})\wedge(\neg x_{1}\vee x_{2}\vee x_{3})\wedge(\neg x_{3})$
+- We have $3$ variables $(x_{1}, x_{2}, x_{3})$ and $3$ Clauses
+##### DIMACS Code:
+``` Plaintext
+c This is a simple DIMACS CNF example
+p cnf 3 3
+1 -2 0
+-1 2 3 0
+-3 0
+```
+---
+$\underline{\textbf{Related Pages: }}$
+- [[Logic]]
+- [[Resolution]]
+- [[First-Order Logic]]
