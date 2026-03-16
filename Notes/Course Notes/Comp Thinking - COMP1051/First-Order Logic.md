@@ -85,6 +85,10 @@ $$\forall x\phi\wedge\exists y\psi\equiv\forall x\exists y(\phi\wedge\psi)$$
 - Swapping the order of quantifiers changes the meaning of a formula
 - **Example:** 
 $$\forall x\exists yE(x,y) \not\equiv \exists x\forall yE(x,y)$$
+##### Implication example of swapping the order:
+- If there _exists_ an $x$ for all $y$, then for all $y$ there _exists_ an $x$ 
+$$\left( \exists x \forall y \, E(x, y) \right) \rightarrow \left( \forall y \exists x \, E(x, y) \right)$$
+- If one $x$ works for everyone, then for anyone you can find that specific $x$ to satisfy the relation
 ---
 #### An Example of why Order Matters:
 - Suppose we have a simple directed graph, with a domain of four vertices: $\{1, 2, 3, 4\}$. Where the set of edges are $E = \{(1,2), (2,3), (3,4), (4,1)\}$
