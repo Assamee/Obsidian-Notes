@@ -22,6 +22,39 @@
 - The resulting clause-set has a size linear to the number of binary connectives in the original formula $O(n)$
 - Each clause contains at most 3 literals
 ---
+### Tseitin's Algorithm: Standard Clause Sets
+#### 1. AND ($a \wedge b$)
+If you substitute $x \leftrightarrow (a \wedge b)$, you generate these 3 clauses:
+- $\{\overline{a}, \overline{b}, x\}$
+- $\{a, \overline{x}\}$
+- $\{b, \overline{x}\}$
+#### 2. OR ($a \vee b$)
+If you substitute $x \leftrightarrow (a \vee b)$, you generate these 3 clauses:
+- $\{\overline{a}, x\}$
+- $\{\overline{b}, x\}$
+- $\{a, b, \overline{x}\}$
+#### 3. NOT ($\neg a$)
+If you substitute $x \leftrightarrow \neg a$, you generate these 2 clauses:
+- $\{\overline{a}, \overline{x}\}$
+- $\{a, x\}$
+#### 4. IMPLIES ($a \rightarrow b$)
+If you substitute $x \leftrightarrow (a \rightarrow b)$, you generate these 3 clauses:
+- $\{a, x\}$
+- $\{\overline{b}, x\}$
+- $\{\overline{a}, b, \overline{x}\}$
+#### 5. IFF / BICONDITIONAL ($a \leftrightarrow b$)
+If you substitute $x \leftrightarrow (a \leftrightarrow b)$, you generate these 4 clauses:
+- $\{a, b, x\}$
+- $\{\overline{a}, \overline{b}, x\}$
+- $\{\overline{a}, b, \overline{x}\}$
+- $\{a, \overline{b}, \overline{x}\}$
+#### 6. XOR / EXCLUSIVE OR ($a \oplus b$)
+If you substitute $x \leftrightarrow (a \oplus b)$, you generate these 4 clauses:
+- $\{\overline{a}, b, x\}$
+- $\{a, \overline{b}, x\}$
+- $\{a, b, \overline{x}\}$
+- $\{\overline{a}, \overline{b}, \overline{x}\}$
+---
 ### Example:
 - **Question:** Convert $\Psi = \neg(x \rightarrow (y \rightarrow x))$ into an equisatisfiable CNF clause-set, starting with an empty set $F = \emptyset$
 **1. Innermost Subformula**
@@ -407,5 +440,6 @@ p cnf 3 3
 ---
 $\underline{\textbf{Related Pages: }}$
 - [[Logic]]
+- [[Natural Deduction]]
 - [[Resolution]]
 - [[First-Order Logic]]

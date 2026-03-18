@@ -50,7 +50,7 @@ $$\begin{array}{lll} \begin{array}{|lll|} \hline
 \quad \quad (p \lor q) \quad (\neg p \lor q) \longrightarrow q \lor q \longrightarrow q \\
 \text{Clause 3 and 4:  (The $p$ and $\neg p$ clash)} \\
 \quad \quad  (p \lor \neg q) \quad (\neg p \lor \neg q) \longrightarrow \neg q \lor \neg q \longrightarrow \neg q \\
-\text{Now the Clauses $p$ and $\neg p$ clash, leaving nothing left $(\emptyset)$} \\ \hline \end{array} \\
+\text{Now the Clauses $q$ and $\neg q$ clash, leaving nothing left $(\emptyset)$} \\ \hline \end{array} \\
 \text{Since we have inferred the Empty Clause, it means $\neg \phi$ is a contradition} \\
 \text{$\therefore$ $\phi$ is a Theorem}
 \end{array}$$
@@ -92,5 +92,6 @@ Truth Table:
 
 $\underline{\textbf{Related Pages: }}$
 - [[Logic]]
+- [[Natural Deduction]]
 - [[Sat-Solvers]]
 - [[Logic Practical Week 15]]

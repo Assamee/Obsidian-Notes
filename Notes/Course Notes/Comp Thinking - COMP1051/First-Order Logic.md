@@ -117,7 +117,7 @@ $$Q_{1}x_{1}Q_{2}x_{2}...Q_{k}x_{k}\phi$$
 - Begin at the bottom of the parse tree with the smallest atomic sub-formulae
 - Since they contain no quantifiers, they are trivially already in PNF
 ##### 2. Work Upwards (AND / ORs):
-When you move up to an $\land \text{ or } \lor$ node, you combine its two childe sub-trees
+When you move up to an $\land \text{ or } \lor$ node, you combine its two child sub-trees
 - First, rename any bound variables so that the two sub-trees share absolutely no variables names
 - Then, pull all quantifiers from both sub-trees to the very front
 ##### 3. Work Upwards (NOT):
@@ -158,6 +158,7 @@ $$\textbf{Resolves to: } \exists x\forall y \; \neg(P(x)\wedge Q(x,y))$$
 ---
 $\underline{\textbf{Related Pages: }}$
 - [[Logic]]
+- [[Natural Deduction]]
 - [[Resolution]]
 - [[Sat-Solvers]]
 - [[First-Order Logic]]
