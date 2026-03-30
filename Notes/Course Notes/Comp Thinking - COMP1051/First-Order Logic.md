@@ -113,10 +113,12 @@ $$Q_{1}x_{1}Q_{2}x_{2}...Q_{k}x_{k}\phi$$
 ---
 ### Parse Trees (Converting to PNF)
 - To convert a complex formula into PNF, we use its parse tree to systematically push quantifiers outwards
+
+Order of Precedence: **AND, OR, NOT**
 ##### 1. Start at the Leaves:
 - Begin at the bottom of the parse tree with the smallest atomic sub-formulae
 - Since they contain no quantifiers, they are trivially already in PNF
-##### 2. Work Upwards (AND / ORs):
+##### 2. Work Upwards (AND then ORs):
 When you move up to an $\land \text{ or } \lor$ node, you combine its two child sub-trees
 - First, rename any bound variables so that the two sub-trees share absolutely no variables names
 - Then, pull all quantifiers from both sub-trees to the very front
