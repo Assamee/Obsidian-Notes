@@ -10,7 +10,7 @@
 ### Tree Properties
 ###### Leaves:
 - A vertex of degree 1
-- Every tree of at least two vertices is guaranteed to have at least one leaf
+- Every tree of at least two vertices is guaranteed to have at least two leaves
 ###### Edge Count: _(Important to Memorise)_
 - A connected graph on $n$ vertices is a tree $\textbf{\textit{iff,}}$ it only has exactly $n-1$ edges
 ###### Unique Paths:

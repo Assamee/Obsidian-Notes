@@ -14,12 +14,12 @@ Instead of keeping track of the "distance" from a source node (like BFS), DFS tr
 ---
 ### Algorithm: Depth-First Search (DFS)
 Because DFS creates a **forest** of multiple unconnected trees, the algorithm is split into two distinctive parts: a "Main" loop that ensures that every vertex is checked, and a recursive "Visit" function that explores the paths from each vertex
-##### Method (Main Loop):
+#### Outer Function (Main Loop):
 1. **Set Up:** Set all vertices to **White** (undiscovered) and all predecessors $\pi$ to `None`
 2. **Reset Clock:** Set the global `time` counter to $0$
 3. **Forest Loop:** Iterate through every vertex $u$ in the graph. If $u$ is **White**, call the recursive exploration function `DFS_Visit(u)`
 	- _This loop guarantees that we build a Depth-First Search, even if the graph is disconnected_
-#### Method (`DFS_Visit(u)` - Recursive Explorer Function):
+#### Inner Function (`DFS_Visit(u)` - Recursive Explorer Function):
 1. **Discovery:** The moment we visit $u$, increment the `time` counter
 2. **Update Vertex:** Set $u$'s discovery time $d[u]$ to the new time, and colour $u$ **Grey**
 3. **Explore Paths:** For every Neighbour $v$ in $u$'s adjacency list:
@@ -29,7 +29,7 @@ Because DFS creates a **forest** of multiple unconnected trees, the algorithm is
 4. **Increment Time:** Once all neighbours have been fully explored (or if it is a dead end), increment the `time` counter again
 5. **Final Vertex Update:** Set $u$'s finish time $f[u]$ to the current time, and colour $u$ **Black** 
 ---
-#### Code Implementation: DFS
+#### Code Implementation: DFS (Tested in VS Code)
 ``` python
 # Define the basic Graph class
 class Graph:
@@ -39,7 +39,6 @@ class Graph:
 
 # Let G be the Graph
 def depth_first_search(G):
-    
     # Set up with empty dictionaries
     colour = {}
     d = {}      # Discovery Times
@@ -50,19 +49,16 @@ def depth_first_search(G):
     for v in G.vertices:
         colour[v] = "WHITE"
         pi[v] = None
-        
-    # Set the global time counter to 0. 
+	
     # We use the 'nonlocal' keyword inside the nested function to access the variable globally
-    time = 0  
+    time = 0  # Set the global time counter to 0
     
     # --- Recursive Explorer Function (runs for each vertex u) ---
     def dfs_visit(u):
-        
         # nonlocal keyword so python treats time as a global variable
         nonlocal time
         
-        # Discovery: Increment the time counter
-        time += 1            
+        time += 1  # Discovery: Increment the time counter
         
         # Update Vertex (u) Info
         d[u] = time          

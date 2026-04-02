@@ -43,11 +43,16 @@
 - A strongly connected component (or strong component) of a diagraph $G$ is a maximal strongly connected subgraph of $G$
 - **Simple Explanation:** A subgraph from a diagraph where every vertex can legally travel to every other vertex in the subgraph
 ---
-### Eulerian Circuits & Hamiltonian Cycles
+### Eulerian Circuits, Paths & Hamiltonian Cycles
 #### Eulerian Circuits
 - A circuit in graph $G$ where you travel along the edges, starting and finishing at the same vertex, and traverse **_each edge_** exactly once
 - Computationally easy to detect Eulerian circuits
 - **Theorem:** A connected graph with **at least two vertices** has an Eulerian circuit _**iff**_ each of its vertices have an even degree
+#### Eulerian Path (Trail)
+- A walk where you travel along every edge **exactly once**, but _**don't**_ need to start and finish at the same vertex
+- **Theorem:** A connected graph has an Eulerian Path _if and only if_ it has **exactly 0 or 2 vertices of odd degree**
+	- _If there are **0 odd vertices**:_ There is a full Eulerian Circuit
+	- _If there are **2 odd vertices**:_ There is an Eulerian Path (to find this path you MUST start at one of the odd vertices, and end at the other)
 #### Hamiltonian Cycles
 - A cycle in graph $G$ where you travel along the edges, start and finish at the same vertex, and visit **_each vertex_** exactly once
 - Computationally hard to determine Hamiltonian cycles
